@@ -1,0 +1,15 @@
+.auth__link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.link {
+    color: $dark-gray;
+    text-decoration: none;
+    
+
+    &:hover {
+        text-decoration: underline;
+    }
+}
