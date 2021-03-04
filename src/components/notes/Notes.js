@@ -1,5 +1,7 @@
 import React from 'react';
+import { NoteScreen } from '../manageNotes/NoteScreen';
 import {Sidebar} from './Sidebar'
+import { WithoutSelection } from './WithoutSelection';
 
 
 // esto es el journalScreen
@@ -10,7 +12,9 @@ export const Notes = () => {
             <Sidebar />
 
             <main>
-                <h1>Main content</h1>
+                {/* <WithoutSelection/> */}
+                <NoteScreen/>
+
             </main>
         </div>
     )
