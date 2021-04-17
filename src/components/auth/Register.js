@@ -23,7 +23,7 @@ export const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     if (isFormValid()) {
-      console.log(name, email, password);
+      //console.log(name, email, password);
       dispatch(startRegisterWithEmailAndPassword(email, password, name))
     }
   };
