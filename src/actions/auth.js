@@ -9,15 +9,29 @@ export const startLoginEmail = (email, password) => {
   };
 };
 
+export const startRegisterWithEmailAndPassword = (email, password, name) => {
+  return (dispatch) => {
+    firebase.auth().createUserWithEmailAndPassword(email, password)
+      .then(async({ user }) => {
+
+        await user.updateProfile({displayName:name});
+        dispatch(
+          login(user.uid, user.displayName)
+        );
+      })
+      .catch(e=>{
+        console.log(e);
+      });
+  };
+};
+
 export const startLoginGoogle = () => {
   return (dispatch) => {
     firebase
       .auth()
       .signInWithPopup(googleAuthProvider)
-      .then(({user}) => {
-        dispatch(
-          login(user.uid, user.displayName)
-        )
+      .then(({ user }) => {
+        dispatch(login(user.uid, user.displayName));
       });
   };
 };
