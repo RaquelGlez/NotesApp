@@ -20,7 +20,7 @@ export const AppRouter = () => {
 
   useEffect(() => {
     firebase.auth().onAuthStateChanged((user) => {
-      console.log(user);
+     // console.log(user);
 
       if (user?.uid) {
         dispatch(login(user.uid, user.displayName));
@@ -36,7 +36,7 @@ export const AppRouter = () => {
   return (
     <>
       {checking ? (
-        <h1>Espere un momento...</h1>
+        <h1>Please wait...</h1>
       ) : (
         <Router>
           <div>
