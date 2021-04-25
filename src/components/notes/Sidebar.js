@@ -15,8 +15,7 @@ export const Sidebar = () => {
     }
 
     const handleAddNew =()=>{
-        console.log('nueva entrada');
-
+        
         dispatch( startNewNote() );
 
 
