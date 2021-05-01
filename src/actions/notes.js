@@ -99,3 +99,21 @@ export const startUploading = ( file ) =>{
 
     }
 }
+
+// delete db
+export const startDeleting = ( id ) => {
+    return async( dispatch, getState ) => {
+
+        const uid = getState().auth.uid;
+        await db.doc(`${ uid }/journal/notes/${ id }`).delete();
+
+        dispatch( deleteNote( id ) );
+    }
+}
+
+
+//delete store
+export const deleteNote = ( id ) => ({
+    type:types.notesDelete,
+    payload: id,
+})
