@@ -20,7 +20,7 @@ export const NotesEntry = ( { id, date, title, body, url }) => {
 
   return (
     <div 
-    className="notes__entry pointer"
+    className="notes__entry pointer animate__animated animate__fadeIn animate__faster"
     onClick={handleEntryClick}
     >
       {
