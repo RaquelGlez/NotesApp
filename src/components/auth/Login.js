@@ -1,13 +1,13 @@
-import React from 'react';
-import {useDispatch, useSelector} from 'react-redux';
-import { Link } from 'react-router-dom';
-import { useForm } from '../../hooks/useForm';
-import {startLoginEmail, startLoginGoogle} from '../../actions/auth';
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import { useForm } from "../../hooks/useForm";
+import { startLoginEmail, startLoginGoogle } from "../../actions/auth";
+import logo from "../../styles/images/logo.png";
 
 export const Login = () => {
-
   const dispatch = useDispatch();
-  const {loading} = useSelector(state=>state.ui)
+  const { loading } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
     email: "maria@gmail.com",
@@ -16,22 +16,26 @@ export const Login = () => {
 
   const { email, password } = formValues;
 
-  const handleLogin =(e)=>{
-    e.preventDefault()
-    dispatch(startLoginEmail(email, password))
-  }
+  const handleLogin = (e) => {
+    e.preventDefault();
+    dispatch(startLoginEmail(email, password));
+  };
 
   const handleGoogleLogin = () => {
     dispatch(startLoginGoogle());
-  }
+  };
 
   return (
     <div>
-      <h3 className="auth__title">Login</h3>
-      <form 
+      { <h3 className="auth__title">Login</h3>}
+      <div className="auth__icon-box">
+        <img className="auth__icon" src={logo} alt="NotesApp logo" />
+      </div>
+
+      <form
         onSubmit={handleLogin}
         className="animate__animated animate__fadeIn animate__faster"
-        >
+      >
         <input
           type="text"
           placeholder="Email"
@@ -49,15 +53,17 @@ export const Login = () => {
           value={password}
           onChange={handleInputChange}
         />
-        <button type="submit" disabled={loading} className="btn btn-block btn-primary">
-          Login
+        <button
+          type="submit"
+          disabled={loading}
+          className="btn btn-block btn-primary"
+        >
+          Sign in
         </button>
         <div className="auth__social-networks">
           {/* <p>Inicia sesion con</p> */}
           <p>or</p>
-          <div 
-            className="google-btn"
-            onClick={handleGoogleLogin}>
+          <div className="google-btn" onClick={handleGoogleLogin}>
             <div className="google-icon-wrapper">
               <img
                 className="google-icon"
