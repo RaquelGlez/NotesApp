@@ -10,12 +10,14 @@
   height: 100vh;
   padding-left: 10px;
   padding-right: 10px;
-  width: 450px;
+  //width: 450px;
+  width: 50%;
 }
 
 .notes__sidebar-navbar {
   display: flex;
   justify-content: space-between;
+  align-items: flex-end;
 }
 
 .notes__sidebar-navbar h3 {
@@ -55,12 +57,18 @@
 }
 
 .notes__entry-picture {
+  min-width: 50px;
+  min-height: 50px;
   height: 75px;
   width: 75px;
 }
 
 .notes__entry-body {
   padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
 }
 
 .notes__entry-title {
@@ -73,14 +81,13 @@
 }
 
 .notes__entry-date-box {
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 5px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 5px;
 }
 
 .notes__entry-date-box span {
-    font-size: 12px;
+  font-size: 12px;
 }
-
