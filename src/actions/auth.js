@@ -2,7 +2,10 @@ import { firebase, googleAuthProvider } from "../firebase/firebase-config";
 import Swal from 'sweetalert2'
 import { types } from "../types/types";
 import { finishLoading, startLoading } from "./ui";
-import { noteLogout } from "./notes";
+import { 
+  noteLogout, 
+  //startLoadingNotes
+ } from "./notes";
 
 export const startLoginEmail = (email, password) => {
   return (dispatch) => {
@@ -29,6 +32,9 @@ export const startLoginEmail = (email, password) => {
 
 export const startRegisterWithEmailAndPassword = (email, password, name) => {
   return (dispatch) => {
+
+    dispatch(startLoading());
+
     firebase.auth().createUserWithEmailAndPassword(email, password)
       .then(async({ user }) => {
 
@@ -36,11 +42,12 @@ export const startRegisterWithEmailAndPassword = (email, password, name) => {
         dispatch(
           login(user.uid, user.displayName)
         );
+        dispatch(finishLoading());
       })
       .catch(e=>{
         console.log(e);
         Swal.fire('Error', e.message, 'error')
-        /* dispatch(finishLoading()) */
+        dispatch(finishLoading());
       });
   };
 };

@@ -24,6 +24,11 @@
   font-weight: lighter;
 }
 
+.notes__sidebar-name {
+  display: flex;
+  align-items: center;
+}
+
 .notes__new-entry {
   align-items: center;
   cursor: pointer;

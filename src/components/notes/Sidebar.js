@@ -25,8 +25,8 @@ export const Sidebar = () => {
     return (
         <aside className="notes__sidebar">
             <div className="notes__sidebar-navbar">
-                <h3 className="mt-5">
-                    <i className="far fa-user"></i>
+                <h3 className="mt-5 notes__sidebar-name">
+                    <i className="far fa-user mr-1"></i>
                     {/* <i className="far fa-moon"></i> */}
                     {/* <span> María</span> */}
                     <span> {name} </span>
