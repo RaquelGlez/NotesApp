@@ -63,13 +63,14 @@ export const NoteScreen = () => {
           </div>
         )}
       </div>
-
-      <button
-        className="btn btn-danger"
-        onClick={handleDelete}
-      >
+      <div className="noteScreen__delete-btn">
+        <button
+          className="btn btn-danger"
+          onClick={handleDelete}
+        >
         Delete
       </button>
+      </div>
     </div>
   );
 };
