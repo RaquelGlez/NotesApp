@@ -8,7 +8,7 @@ Se pueden crear y/o actualizar cuando se necesite y si no se ocupan mas, es posi
 
 &nbsp;
 
-
+El usuario debe iniciar sesión para utilizar la aplicación. Puede registrarse, o bien iniciar sesión con Google.
 
 &nbsp;
 ## Construido con
