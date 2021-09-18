@@ -12,10 +12,10 @@ export const Register = () => {
   const { msgError } = useSelector((state) => state.ui);
 
   const [formValues, handleInputChange] = useForm({
-    name: "Maria",
-    email: "maria@gmail.com",
-    password: "123456",
-    password2: "123456",
+    name: "",
+    email: "",
+    password: "",
+    password2: "",
   });
 
   const { name, email, password, password2 } = formValues;
@@ -23,7 +23,6 @@ export const Register = () => {
   const handleRegister = (e) => {
     e.preventDefault();
     if (isFormValid()) {
-      //console.log(name, email, password);
       dispatch(startRegisterWithEmailAndPassword(email, password, name))
     }
   };

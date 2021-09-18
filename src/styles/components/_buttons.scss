@@ -19,7 +19,8 @@
 }
 
 .btn-primary {
-  background-color: $primary;
+  //background-color: $primary;
+  background-color: $green;
   border-radius: 2px;
 
   &:disabled {
@@ -35,6 +36,8 @@
   background-color: red;
 
   transition: background-color .3s ease;
+
+  width: 50%;
 
   &:hover {
     background-color: darken($color: red, $amount: 10);
